@@ -1,5 +1,10 @@
 package com.example.proyectop1.ui.theme
 
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.width
+import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -23,17 +28,30 @@ fun Header(user: User) {
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
 
-        Column {
-            Text(
-                text = "Hola ${user.name}",
-                style = MaterialTheme.typography.titleLarge
+        Row {
+
+            Icon(
+                imageVector = Icons.Default.AccountCircle,
+                contentDescription = "Profile",
+                modifier = Modifier.size(40.dp)
             )
 
-            Text(
-                text = "Bienvenido",
-                style = MaterialTheme.typography.bodyMedium,
-                color = Color.Gray
-            )
+            Spacer(modifier = Modifier.width(8.dp))
+
+            Column {
+
+                Text(
+                    text = "Hola ${user.name}",
+                    style = MaterialTheme.typography.titleLarge
+                )
+
+                Text(
+                    text = "Bienvenido",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = Color.Gray
+                )
+            }
+
         }
 
         IconButton(onClick = {}) {

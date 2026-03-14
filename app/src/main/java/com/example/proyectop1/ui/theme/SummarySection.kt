@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -28,13 +29,14 @@ fun SummarySection(cards: List<SummaryCard>) {
         Card(
             modifier = Modifier
                 .weight(1f)
-                .height(160.dp),
+                .height(180.dp),
             shape = RoundedCornerShape(20.dp)
         ) {
 
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
+                    .fillMaxSize()
                     .background(cards[0].color),
                 contentAlignment = Alignment.Center
             ) {
@@ -52,11 +54,13 @@ fun SummarySection(cards: List<SummaryCard>) {
             cards.drop(1).forEach { card ->
 
                 Card(
+                    modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(20.dp)
                 ) {
 
                     Column(
                         modifier = Modifier
+                            .fillMaxWidth()
                             .background(card.color)
                             .padding(16.dp)
                     ) {
